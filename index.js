@@ -22,10 +22,23 @@ var responsive = "roll"
 //     }
 // document.getElementById("roll").onclick = result;
 
+//function dieroll() {
+//   var result = [];
+//    for (var i = 0; i < 5; i++){
+//      result.push("&#x268" + Math.floor(Math.random() * 6) + ";");
+//    }
+//    return result;
+//  }
+
+var images = ["/images/dice 1.png","/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png","/images/Dice 5.png", "/images/Dice 6.png" ]
+
 function dieroll() {
-    var result = [];
-    for (var i = 0; i < 5; i++){
-      result.push("&#x268" + Math.floor(Math.random() * 6) + ";");
-    }
-    return result;
-  };
+  for (let i = 0; i < 5; i++) {
+    images[0,1,2,3,4,5,6] + Math.floor(Math.random()* 6) + ";"
+  }
+}
+
+document.getElementById(responsive).onclick = function() {
+      dieroll(1, 5)
+
+}
