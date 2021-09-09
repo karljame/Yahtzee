@@ -1,4 +1,5 @@
 var responsive = "roll"
+var turns = 3
 
 // var result = diceRoll(1, 6)
 
@@ -30,11 +31,16 @@ var responsive = "roll"
 //    return result;
 //  }
 
-var images = ["/images/dice 1.png","/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png","/images/Dice 5.png", "/images/Dice 6.png" ]
+var images = ["/images/dice 1.png","/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png","/images/Dice 5.png", "https://i1.sndcdn.com/artworks-Uii8SMJvNPxy8ePA-romBoQ-t500x500.jpg" ]
 
 function dieroll() {
   for (let i = 1; i < 6; i++) {
-    console.log(Math.floor(Math.random()* 6))
+    console.log(document.getElementById("dice" + i))
+    currentDice = document.getElementById("dice" + i)
+    currentNumber = Math.floor(Math.random()* 6 + 1)
+    currentDice.src = images[currentNumber - 1 ]
+    console.log(currentNumber)
+
   }
 }
 
@@ -42,3 +48,4 @@ document.getElementById(responsive).onclick = function() {
       dieroll(1, 6)
 
 }
+
