@@ -15,11 +15,11 @@ var turns = 3
 //     console.log(roll2);
 //     console.log(roll3);
 //     console.log(roll4);
-//     console.log(roll5);  
+//     console.log(roll5);
 // }
 //  document.getElementById(responsive).onclick = function() {
 //         diceroll(1, 6)
- 
+
 //     }
 // document.getElementById("roll").onclick = result;
 
@@ -31,21 +31,34 @@ var turns = 3
 //    return result;
 //  }
 
-var images = ["/images/dice 1.png","/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png","/images/Dice 5.png", "https://i1.sndcdn.com/artworks-Uii8SMJvNPxy8ePA-romBoQ-t500x500.jpg" ]
+var images = ["/images/dice 1.png", "/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png", "/images/Dice 5.png", "/images/Dice 6.png"]
 
 function dieroll() {
-  for (let i = 1; i < 6; i++) {
-    console.log(document.getElementById("dice" + i))
-    currentDice = document.getElementById("dice" + i)
-    currentNumber = Math.floor(Math.random()* 6 + 1)
-    currentDice.src = images[currentNumber - 1 ]
-    console.log(currentNumber)
+    for (let i = 1; i < 6; i++) {
+        console.log(document.getElementById("dice" + i))
+        currentDice = document.getElementById("dice" + i)
+        currentNumber = Math.floor(Math.random() * 6 + 1)
+        currentDice.src = images[currentNumber - 1]
+        console.log(currentNumber)
 
-  }
+    }
 }
 
-document.getElementById(responsive).onclick = function() {
-      dieroll(1, 6)
+document.getElementById(responsive).onclick = function () {
+    dieroll(1, 6)
 
 }
 
+let rollCount = 3;
+const rollBtn = document.getElementById('roll');
+const turnsDiv = document.getElementById('turns')
+
+rollBtn.addEventListener('click', () => {
+    rollCount--;
+    if (rollCount > 0) {
+        console.log('roll')
+    } else {
+        rollBtn.setAttribute('disabled', true)
+    }
+    turnsDiv.innerText = rollCount;
+})
