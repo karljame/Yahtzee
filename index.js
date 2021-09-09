@@ -33,12 +33,12 @@ var responsive = "roll"
 var images = ["/images/dice 1.png","/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png","/images/Dice 5.png", "/images/Dice 6.png" ]
 
 function dieroll() {
-  for (let i = 0; i < 5; i++) {
-    images[0,1,2,3,4,5,6] + Math.floor(Math.random()* 6) + ";"
+  for (let i = 1; i < 6; i++) {
+    console.log(Math.floor(Math.random()* 6))
   }
 }
 
 document.getElementById(responsive).onclick = function() {
-      dieroll(1, 5)
+      dieroll(1, 6)
 
 }
