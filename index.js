@@ -35,6 +35,7 @@ var images = ["/images/dice 1.png", "/images/Dice 2.png", "/images/Dice 3.png", 
 
 function dieroll() {
     for (let i = 1; i < 6; i++) {
+      if(hold[i] == 1)
         console.log(document.getElementById("dice" + i))
         currentDice = document.getElementById("dice" + i)
         currentNumber = Math.floor(Math.random() * 6 + 1)
@@ -63,44 +64,59 @@ rollBtn.addEventListener('click', () => {
     turnsDiv.innerText = rollCount;
 })
 
+var dice = new Array(0,0,0,0,0,0);
+var hold = new Array(0,0,0,0,0,0);
 
-let diceData = [
-  {
-    value: undefined,
-    status: "active"
-  },
-  {
-    value: undefined,
-    status: "active"
-  },
-  {
-    value: undefined,
-    status: "active"
-  },
-  {
-    value: undefined,
-    status: "active"
-  },
-  {
-    value: undefined,
-    status: "active"
-  },
-]
 
-const diceDivs = document.querySelectorAll('.dice')
 
-diceDivs.forEach( (dice) => {
-  dice.addEventListener('click' , () => {
 
-    if (dice.dataset.status == 'active') {
-      dice.dataset.status = 'locked';
-      diceData[dice.dataset.index].status = 'locked';
 
-    } else {
-      dice.dataset.status = 'actuve';
-      diceData[dice.dataset.index].status = 'active';
-    }
 
-    console.log(diceData)
-  })
-})
+
+
+
+
+
+
+
+
+// let diceData = [
+//   {
+//     value: undefined,
+//     status: "active"
+//   },
+//   {
+//     value: undefined,
+//     status: "active"
+//   },
+//   {
+//     value: undefined,
+//     status: "active"
+//   },
+//   {
+//     value: undefined,
+//     status: "active"
+//   },
+//   {
+//     value: undefined,
+//     status: "active"
+//   },
+// ]
+
+// const diceDivs = document.querySelectorAll('.dice')
+
+// diceDivs.forEach( (dice) => {
+//   dice.addEventListener('click' , () => {
+
+//     if (dice.dataset.status == 'active') {
+//       dice.dataset.status = 'locked';
+//       diceData[dice.dataset.index].status = 'locked';
+
+//     } else {
+//       dice.dataset.status = 'actuve';
+//       diceData[dice.dataset.index].status = 'active';
+//     }
+
+//     console.log(diceData)
+//   })
+// })
