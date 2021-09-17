@@ -1,5 +1,19 @@
 var responsive = "roll"
 var turns = 3
+const scoreBoardPoint = document.querySelectorAll('.scoreboardYou')
+const threeOfKind = document.getElementById('threeOf')
+const fourOfKind = document.getElementById('fourOf')
+const smallStraight = document.getElementById('smallStraight')
+const largeStraight = document.getElementById('largeStraight')
+const fullHouse = document.getElementById('fullHouse')
+const chance = document.getElementById('chance')
+const yahtzee = document.getElementById('yahtzee')
+const fullhouseRegex = /(\d)\1{1}/
+const threeofakindRegex = /(\d)\1{2}/
+const fourofakindRegex = /(\d)\1{3}/
+const yahtzeeRegex = /(\d)\1{4}/
+const smallstraightRegex = /(1234|2345|3456)/
+const largestraightRegex = /(12345|23456)/
 
 // var result = diceRoll(1, 6)
 
@@ -35,8 +49,8 @@ var images = ["/images/dice 1.png", "/images/Dice 2.png", "/images/Dice 3.png", 
 
 function dieroll() {
     for (let i = 1; i < 6; i++) {
-      if(hold[i] == 1)
-        console.log(document.getElementById("dice" + i))
+        if (hold[i] == 1)
+            console.log(document.getElementById("dice" + i))
         currentDice = document.getElementById("dice" + i)
         currentNumber = Math.floor(Math.random() * 6 + 1)
         currentDice.src = images[currentNumber - 1]
@@ -64,8 +78,8 @@ rollBtn.addEventListener('click', () => {
     turnsDiv.innerText = rollCount;
 })
 
-var dice = new Array(0,0,0,0,0,0);
-var hold = new Array(0,0,0,0,0,0);
+var dice = new Array(0, 0, 0, 0, 0, 0);
+var hold = new Array(0, 0, 0, 0, 0, 0);
 
 
 

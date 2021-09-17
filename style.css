@@ -36,6 +36,35 @@ body {
     padding-top: 50px;
   }
 
+  .scoreboardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .scoreboardRow {
+      display: flex;
+      border: 1px solid black;
+      justify-content: space-around;
+  }
+
+  .scoreboardName{
+    display: flex;
+    width: 60%;
+    padding: 2px;
+    align-items: center;
+  }
+
+  .scoreboardYou{
+    display: flex;
+    text-align: center;
+    border-left: 2px solid black;
+    flex-grow: 1;
+    justify-content: center;
+    width: 20%;
+    padding: 3px;
+  }
+
   #turns {
       position: absolute;
       left: 50%;
