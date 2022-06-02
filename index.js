@@ -47,15 +47,31 @@ const largestraightRegex = /(12345|23456)/
 
 var images = ["/images/dice 1.png", "/images/Dice 2.png", "/images/Dice 3.png", "/images/Dice 4.png", "/images/Dice 5.png", "/images/Dice 6.png"]
 
+const diceImgs = document.querySelectorAll(".dices img")
+console.log(diceImgs)
+diceImgs.forEach((img) =>{
+    img.addEventListener("click", () => {
+        console.log(img.dataset.index)
+        if (rollCount >= 1) {
+            if (img.dataset.status == "active") {
+                img.dataset.status = "locked";
+            }
+            else if (img.dataset.status == "locked") {
+                img.dataset.status = "active";
+            }
+        }
+    })
+})
+
 function dieroll() {
     for (let i = 1; i < 6; i++) {
-        if (hold[i] == 1)
-            console.log(document.getElementById("dice" + i))
         currentDice = document.getElementById("dice" + i)
-        currentNumber = Math.floor(Math.random() * 6 + 1)
-        currentDice.src = images[currentNumber - 1]
-        console.log(currentNumber)
-
+        if (currentDice.dataset.status == "active") {
+            currentNumber = Math.floor(Math.random() * 6 + 1)
+            currentDice.src = images[currentNumber - 1]
+            console.log(currentNumber)
+        }
+        console.log(currentDice.dataset)
     }
 }
 
